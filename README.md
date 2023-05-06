@@ -3,47 +3,60 @@
 ## AIM
 To develop a Django application to store and retrieve data from a student database using Object Relational Mapping(ORM).
 
-## Entity Relationship Diagram
+# Entity Relationship Diagram
 
-Include your ER diagram here
+![image](https://user-images.githubusercontent.com/113497104/236615099-4de261d9-bba1-48f8-bc97-dd076b8fbfc6.png)
 
 ## DESIGN STEPS
 
 ### STEP 1:
-Clone the problem from the github
+Clone the repository from github.
 
 ### STEP 2:
-Create a new app
+Create an admin interfacefor Django.
 
 ### STEP 3:
-Enter the code for admin.py and model.py
+Create an app and edit settings.py.
 
 ### Step 4:
-Execute Django admin and create 10 employees
+Makemigrations and migrate the changes.
+
+### Step 5:
+Create admin user and write pythoncode for admin and models.
+
+### STEP 6:
+Make all the migrations to 'myapp'.
+
+### STEP 7:
+Create an student database with 10 feilds using runserver command.
 
 # PROGRAM
 ```
-from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+admin.py 
 
-Model.py
+from django.contrib import admin
+from .models import student,studentAdmin 
+admin.site.register(student,studentAdmin)
+
+models.py
 
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model): 
-    eid=models.CharField(max_length=20, help_text="Employee ID") 
-    name=models.CharField(max_length=100) 
-    salary=models.IntegerField()
-    age=models.IntegerField()
-    email=models. EmailField()
+class student (models.Model):
+    sid=models.CharField(max_length=28)
+    name=models.CharField(max_length=30)
+    regno=models.IntegerField()
+    marks=models.IntegerField()
+    email=models.EmailField()
 
-class EmployeeAdmin (admin. ModelAdmin):
-    list_display=('eid','name','salary','age','email')
+class studentAdmin(admin.ModelAdmin):
+    list_display=('sid','name','regno','marks','email')
+
 ```
 ## OUTPUT
 
-![image](https://user-images.githubusercontent.com/113497104/233416670-f43ec1e9-a801-43b9-ab9c-852009a3509c.png)
+![image](https://user-images.githubusercontent.com/113497104/236615256-a6d401ff-591e-48de-9f94-a9c526975382.png)
+
 
 ## RESULT
 The code executed successfully
